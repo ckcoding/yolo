@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火灾检测实时展示</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        #video-stream {
+            max-width: 800px;
+            width: 100%;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>实时展示</h1>
+    <img id="video-stream" src="" alt="视频流">
+
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        var img = document.getElementById('video-stream');
+
+        socket.on('video_frame', function(data) {
+            img.src = 'data:image/jpeg;base64,' + data.image;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+[
+  {
+    "title": "交通管理",
+    "tag": "TrafficManagement",
+    "subItem": [
+      {
+        "subTitle": "停车标志识别",
+        "subTag": "stop sign",
+        "completed": true,
+        "description": "识别道路上的停车标志，包括禁止停车、限时停车等，监测违规停车。"
+      },
+      {
+        "subTitle": "卡车识别",
+        "subTag": "truck",
+        "completed": true,
+        "description": "在监控视频中准确识别出大型卡车，可辅助交通管理部门监控卡车的行驶轨迹、速度及是否超载，确保道路交通安全。"
+      },
+      {
+        "subTitle": "汽车识别",
+        "subTag": "bus",
+        "completed": true,
+        "description": "识别汽车，可用于交通系统监控、线路优化及乘客流量分析，提高公共交通运营效率。"
+      },
+      {
+        "subTitle": "摩托车识别",
+        "subTag": "motorcycle",
+        "completed": true,
+        "description": "识别道路上的摩托车，有助于交通管理、摩托车盗窃预防和交通违规监测，提升道路安全。"
+      },
+      {
+        "subTitle": "自行车识别",
+        "subTag": "bicycle",
+        "completed": true,
+        "description": "识别自行车，支持城市交通规划、自行车道优化及自行车盗窃预警，促进绿色出行。"
+      },
+      {
+        "subTitle": "渣土车识别",
+        "subTag": "dumping truck",
+        "completed": false,
+        "description": "识别运输建筑垃圾的渣土车，帮助监管部门监控其行驶路线和时间，防止违规倾倒建筑垃圾。"
+      },
+      {
+        "subTitle": "交通信号灯识别",
+        "subTag": "traffic light",
+        "completed": true,
+        "description": "实时捕捉并准确识别交通信号灯的颜色状态（红、黄、绿），为自动驾驶车辆提供关键导航信息，确保其在复杂交通环境中安全行驶，提升道路安全与交通效率。"
+      },
+      {
+        "subTitle": "电动车未佩戴头盔识别",
+        "subTag": "electric bike helmet",
+        "completed": false,
+        "description": "检测电动车骑行者是否佩戴头盔，提高骑行安全意识，减少交通事故伤害。"
+      },
+      {
+        "subTitle": "路面裂缝识别",
+        "subTag": "road crack",
+        "completed": true,
+        "description": "识别道路表面的裂缝，为道路维护部门提供及时准确的维修信息，延长道路使用寿命。"
+      },
+      {
+        "subTitle": "道路积水识别",
+        "subTag": "road water logging",
+        "completed": false,
+        "description": "检测道路积水情况，为交通管理部门提供预警，减少因积水导致的交通事故。"
+      },
+      {
+        "subTitle": "道路施工识别",
+        "subTag": "road construction",
+        "completed": false,
+        "description": "识别道路上的施工区域，提醒驾驶员注意避让，保障施工期间道路交通安全。"
+      },
+      {
+        "subTitle": "道路事故识别",
+        "subTag": "road accident",
+        "completed": false,
+        "description": "检测道路上的交通事故，及时通知相关部门处理，减少交通拥堵和二次事故。"
+      },
+      {
+        "subTitle": "道路结冰识别",
+        "subTag": "road icing",
+        "completed": false,
+        "description": "识别道路结冰情况，为冬季交通提供安全预警，减少因结冰导致的交通事故。"
+      },
+      {
+        "subTitle": "道路抛撒物识别",
+        "subTag": "road litter",
+        "completed": false,
+        "description": "检测道路上的抛撒物，如垃圾、石块等，及时通知清洁部门处理，保持道路整洁。"
+      },
+      {
+        "subTitle": "路面油污识别",
+        "subTag": "road oil spill",
+        "completed": false,
+        "description": "识别路面上的油污，预防因油污导致的交通事故，保障行车安全。"
+      },
+      {
+        "subTitle": "玩手机识别",
+        "subTag": "cell phone",
+        "completed": true,
+        "description": "检测行人或驾驶员是否在使用手机，提高交通安全意识，减少分心驾驶或行走导致的交通事故。"
+      }
+    ]
+  },
+  {
+    "title": "城市管理",
+    "tag": "UrbanManagement",
+    "subItem": [
+      {
+        "subTitle": "井盖相关识别",
+        "subTag": "manhole cover",
+        "completed": true,
+        "description": "识别城市中的井盖位置及其状态，及时通知维修部门处理缺失或损坏的井盖，防止行人或车辆陷入危险。"
+      },
+      {
+        "subTitle": "占道经营识别",
+        "subTag": "illegal street vendors",
+        "completed": false,
+        "description": "识别商家是否违规占用道路进行经营活动，维护良好的市容秩序和交通畅通。"
+      },
+      {
+        "subTitle": "垃圾堆放识别",
+        "subTag": "garbage pile",
+        "completed": false,
+        "description": "识别公共区域的垃圾堆放情况，促进城市环境卫生管理，提高居民生活质量。"
+      },
+      {
+        "subTitle": "垃圾桶满溢识别",
+        "subTag": "full trash bin",
+        "completed": false,
+        "description": "检测垃圾桶是否已满，及时调度清洁车辆进行清理，保持城市环境整洁。"
+      },
+      {
+        "subTitle": "消防通道占用识别",
+        "subTag": "blocked fire lane",
+        "completed": false,
+        "description": "识别消防通道是否被占用，确保紧急情况下消防车辆能够迅速通行，保障公共安全。"
+      },
+      {
+        "subTitle": "异常排污识别",
+        "subTag": "abnormal discharge",
+        "completed": false,
+        "description": "监测城市工业排放口，识别异常排污行为，保护环境免受污染。"
+      },
+      {
+        "subTitle": "电瓶车入梯识别",
+        "subTag": "electric scooter in elevator",
+        "completed": false,
+        "description": "识别电瓶车是否进入电梯，预防电瓶车在电梯内引发火灾或安全事故，保障居民安全。"
+      },
+      {
+        "subTitle": "河道漂浮物识别",
+        "subTag": "river floating objects",
+        "completed": false,
+        "description": "检测河道中是否含有漂浮物，如垃圾、废弃物等，为河流环境保护提供依据。"
+      },
+      {
+        "subTitle": "持刀识别",
+        "subTag": "knife",
+        "completed": true,
+        "description": "在监控视频中快速检测并识别刀具等潜在危险物品，为公共场所的安全管理提供重要支持，有效预防暴力事件，增强公共安全。"
+      }
+    ]
+  },
+  {
+    "title": "园区/工地管理",
+    "tag": "ParkAndConstructionManagement",
+    "subItem": [
+      {
+        "subTitle": "烟雾识别",
+        "subTag": "smoke",
+        "completed": false,
+        "description": "识别监控视频中的烟雾，用于火灾早期预警，减少火灾造成的损失和人员伤亡。"
+      },
+      {
+        "subTitle": "火焰识别",
+        "subTag": "flame",
+        "completed": false,
+        "description": "快速检测火焰，及时发出火灾警报，为消防部门争取宝贵的救援时间。"
+      },
+      {
+        "subTitle": "安全帽识别",
+        "subTag": "safety helmet",
+        "completed": false,
+        "description": "识别施工现场或危险作业区域的工作人员是否佩戴安全帽，提升工地安全管理水平。"
+      },
+      {
+        "subTitle": "睡岗识别",
+        "subTag": "sleeping on duty",
+        "completed": false,
+        "description": "检测值班人员是否在工作岗位上打瞌睡，确保岗位安全责任落实到位。"
+      },
+      {
+        "subTitle": "摔倒识别",
+        "subTag": "fall",
+        "completed": false,
+        "description": "识别行人是否摔倒，及时提供援助，保障公共安全，减少因摔倒导致的伤害。"
+      },
+      {
+        "subTitle": "抽烟识别",
+        "subTag": "smoking",
+        "completed": false,
+        "description": "识别禁烟区域内的抽烟行为，促进公共场所无烟环境建设，保护公众健康。"
+      },
+      {
+        "subTitle": "口罩识别",
+        "subTag": "mask",
+        "completed": false,
+        "description": "识别人员是否佩戴口罩，尤其在疫情期间，有助于疫情防控和公共卫生管理。"
+      },
+      {
+        "subTitle": "消防栓识别",
+        "subTag": "fire hydrant",
+        "completed": true,
+        "description": "识别消防栓设施，为紧急情况下快速找到并使用消防栓提供便利。"
+      }
+    ]
+  },
+  {
+    "title": "其他",
+    "tag": "Other",
+    "subItem": [
+      {
+        "subTitle": "人识别",
+        "subTag": "person",
+        "completed": true,
+        "description": "识别特定个体或人群，广泛应用于安全监控、人员追踪及行为分析等领域。"
+      },
+      {
+        "subTitle": "牛识别",
+        "subTag": "cow",
+        "completed": true,
+        "description": "识别牧场或农场中的牛，支持畜牧业管理、健康监测及放牧监控。"
+      },
+      {
+        "subTitle": "羊识别",
+        "subTag": "sheep",
+        "completed": true,
+        "description": "识别牧场或农场中的羊，支持畜牧业管理、健康监测及放牧监控。"
+      },
+      {
+        "subTitle": "马识别",
+        "subTag": "horse",
+        "completed": true,
+        "description": "识别牧场或农场中的马，支持畜牧业管理、健康监测及放牧监控。"
+      },
+      {
+        "subTitle": "狗识别",
+        "subTag": "dog",
+        "completed": true,
+        "description": "识别狗只，帮助救援人员快速识别并救助流浪狗或受伤狗只，减少动物伤害事件的发生。"
+      },
+      {
+        "subTitle": "猫识别",
+        "subTag": "cat",
+        "completed": true,
+        "description": "识别猫只，有助于减少流浪猫的数量和流浪猫问题的发生。"
+      },
+      {
+        "subTitle": "鸟识别",
+        "subTag": "bird",
+        "completed": true,
+        "description": "识别鸟类，用于机场、农场等防止鸟类造成直接或间接经济损失。"
+      }
+    ]
+  }
+]

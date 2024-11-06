@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>视频流</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        #video {
+            max-width: 100%;
+            width: 640px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" controls muted playsinline></video>
+    <script>
+        if(Hls.isSupported()) {
+            var video = document.getElementById('video');
+            var hls = new Hls({
+                debug: true,  // 开启调试模式
+                autoStartLoad: true,
+                startLevel: 0,  // 从最低质量开始
+                abrEwmaFastLive: 3,
+                abrEwmaSlowLive: 9,
+                abrEwmaFastVoD: 3,
+                abrEwmaSlowVoD: 9,
+                maxBufferLength: 10,  // 增加最大缓冲长度
+                maxMaxBufferLength: 20,
+                maxBufferSize: 30*1000*1000,  // 增加最大缓冲区大小
+                maxBufferHole: 0.1,
+                lowBufferWatchdogPeriod: 0.2,
+                highBufferWatchdogPeriod: 1,
+                nudgeOffset: 0.1,
+                nudgeMaxRetry: 5,
+                maxFragLookUpTolerance: 0.2,
+                liveSyncDurationCount: 2,
+                liveMaxLatencyDurationCount: 5,
+                enableWorker: true,
+                enableSoftwareAES: false,
+                manifestLoadingTimeOut: 10000,  // 增加超时时间
+                manifestLoadingMaxRetry: 3,  // 增加重试次数
+                manifestLoadingRetryDelay: 1000,  // 增加重试延迟
+                levelLoadingTimeOut: 10000,
+                levelLoadingMaxRetry: 3,
+                levelLoadingRetryDelay: 1000,
+                fragLoadingTimeOut: 10000,
+                fragLoadingMaxRetry: 3,
+                fragLoadingRetryDelay: 1000
+            });
+            
+            hls.loadSource('/hls/master.m3u8');
+            hls.attachMedia(video);
+            
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play().catch(function(error) {
+                    console.log("播放错误:", error);
+                });
+            });
+
+            // 自动重试机制
+            let retryCount = 0;
+            const maxRetries = 5;  // 增加最大重试次数
+
+            hls.on(Hls.Events.ERROR, function(event, data) {
+                console.log('HLS错误:', data);
+                if (data.fatal) {
+                    switch(data.type) {
+                        case Hls.ErrorTypes.NETWORK_ERROR:
+                            if (retryCount < maxRetries) {
+                                console.log(`网络错误，尝试恢复... (${retryCount + 1}/${maxRetries})`);
+                                hls.startLoad();
+                                retryCount++;
+                            } else {
+                                console.log('达到最大重试次数，重新加载页面...');
+                                location.reload();
+                            }
+                            break;
+                        case Hls.ErrorTypes.MEDIA_ERROR:
+                            if (retryCount < maxRetries) {
+                                console.log(`媒体错误，尝试恢复... (${retryCount + 1}/${maxRetries})`);
+                                hls.recoverMediaError();
+                                retryCount++;
+                            } else {
+                                console.log('达到最大重试次数，重新加载页面...');
+                                location.reload();
+                            }
+                            break;
+                        default:
+                            console.log('无法恢复的错误，重新加载页面...');
+                            location.reload();
+                            break;
+                    }
+                }
+            });
+
+            // 监听缓冲状态
+            video.addEventListener('waiting', function() {
+                console.log('视频缓冲中...');
+            });
+
+            video.addEventListener('playing', function() {
+                console.log('视频开始播放');
+                retryCount = 0;  // 重置重试计数
+            });
+        }
+    </script>
+</body>
+</html>
